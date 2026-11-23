@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "MyTube — YouTube focus controls",
+  "version": "1.0.0",
+  "description": "Filter Shorts, community posts and ads, stop autoplay, and choose which parts of YouTube you see.",
+  "permissions": ["storage", "declarativeNetRequest"],
+  "icons": {"16":"icons/16.png","32":"icons/32.png","48":"icons/48.png","128":"icons/128.png"},
+  "action": {"default_title":"MyTube settings","default_popup":"settings.html"},
+  "options_ui": {"page":"settings.html","open_in_tab":true},
+  "background": {"service_worker":"worker.js"},
+  "declarative_net_request": {"rule_resources":[{"id":"ads","enabled":true,"path":"ads.json"}]},
+  "content_scripts": [{
+    "matches": ["https://www.youtube.com/*","https://m.youtube.com/*","https://youtube.com/*"],
+    "js": ["settings.js","content.js","ad-player.js"],
+    "css": ["filters.css"],
+    "run_at": "document_start"
+  }]
+}

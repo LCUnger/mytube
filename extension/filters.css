@@ -1,0 +1,178 @@
+/* Scope rules to individual renderers so mixed feeds retain ordinary videos. */
+html[data-mytube~="shorts"] :is(
+  ytd-reel-shelf-renderer,
+  ytm-reel-shelf-renderer,
+  ytd-rich-shelf-renderer[is-shorts],
+  ytm-shorts-lockup-view-model,
+  ytm-shorts-lockup-view-model-v2,
+  ytd-rich-section-renderer:has(ytd-rich-shelf-renderer[is-shorts]),
+  :is(ytd-guide-entry-renderer, ytd-mini-guide-entry-renderer, ytm-pivot-bar-item-renderer):has(a[href^="/shorts"]),
+  ytm-pivot-bar-item-renderer:has(.pivot-shorts)
+) {
+  display: none !important;
+}
+
+html[data-mytube~="shorts"] :is(
+  :is(ytd-rich-item-renderer, ytd-video-renderer, ytd-grid-video-renderer, ytd-compact-video-renderer, yt-lockup-view-model, ytm-rich-item-renderer, ytm-video-with-context-renderer, ytm-compact-video-renderer, ytm-video-card-renderer):has(a[href^="/shorts/"])
+) {
+  display: none !important;
+}
+
+html[data-mytube~="community"] :is(
+  ytd-backstage-post-thread-renderer,
+  ytd-backstage-post-renderer,
+  ytd-post-renderer,
+  ytm-backstage-post-thread-renderer,
+  ytm-backstage-post-renderer,
+  ytd-post-multi-image-renderer,
+  ytm-post-renderer,
+  ytd-poll-renderer,
+  ytm-poll-renderer,
+  ytd-image-poll-renderer,
+  ytm-image-poll-renderer
+) {
+  display: none !important;
+}
+
+html[data-mytube~="community"] :is(
+  :is(ytd-rich-item-renderer, ytm-rich-item-renderer):has(ytd-backstage-post-thread-renderer, ytd-backstage-post-renderer, ytd-post-renderer, ytm-backstage-post-thread-renderer, ytm-backstage-post-renderer, ytd-post-multi-image-renderer, ytm-post-renderer, ytd-poll-renderer, ytm-poll-renderer, ytd-image-poll-renderer, ytm-image-poll-renderer, a[href^="/post/"])
+) {
+  display: none !important;
+}
+
+html[data-mytube~="comments"] :is(
+  ytd-comments,
+  ytm-comment-section-renderer,
+  ytm-comments-entry-point-header-renderer,
+  ytm-engagement-panel-section-list-renderer[target-id="engagement-panel-comments-section"],
+  ytd-engagement-panel-section-list-renderer[target-id="engagement-panel-comments-section"]
+) {
+  display: none !important;
+}
+
+html[data-mytube~="explore"] :is(
+  ytd-guide-section-renderer:has(a[href^="/feed/explore"]),
+  ytd-guide-section-renderer:has(a[href^="/feed/trending"]),
+  ytd-guide-section-renderer:has(a[href^="/feed/storefront"]):has(a[href^="/gaming"]),
+  :is(ytd-guide-entry-renderer, ytd-mini-guide-entry-renderer, ytm-pivot-bar-item-renderer):has(:is(a[href^="/feed/explore"], a[href^="/feed/trending"])),
+  ytm-feed-filter-chip-bar-renderer .feed-filter-chip-bar-renderer-explore-button
+) {
+  display: none !important;
+}
+
+html[data-mytube~="more"] :is(
+  ytd-guide-section-renderer:has(a[href*="music.youtube.com"]):has(a[href*="youtubekids.com"]),
+  ytd-guide-section-renderer:has(a[href*="studio.youtube.com"]):has(a[href*="music.youtube.com"])
+) {
+  display: none !important;
+}
+
+html[data-mytube~="annotations"] :is(
+  .ytp-cards-button,
+  .ytp-cards-teaser,
+  .ytp-cards-teaser-text,
+  .ytp-cards-teaser-box,
+  .ytp-cards-teaser-label,
+  .annotation,
+  .iv-branding
+) {
+  display: none !important;
+}
+
+html[data-mytube~="sidebar"][data-mytube-route="watch"] :is(
+  ytd-watch-flexy #secondary,
+  ytm-watch-next-secondary-results-renderer,
+  ytm-single-column-watch-next-results-renderer ytm-item-section-renderer[section-identifier="related-items"]
+) {
+  display: none !important;
+}
+
+html[data-mytube~="home"][data-mytube-route="home"] :is(
+  ytd-browse[page-subtype="home"] #primary,
+  ytm-browse ytm-rich-grid-renderer,
+  ytm-browse ytm-section-list-renderer,
+  ytm-browse > ytm-single-column-browse-results-renderer
+) {
+  display: none !important;
+}
+
+html[data-mytube~="endFeed"] :is(
+  .ytp-endscreen-content,
+  .ytp-videowall-still,
+  .ytp-upnext,
+  .ytp-autonav-endscreen-upnext-container
+) {
+  display: none !important;
+}
+
+html[data-mytube~="endCards"] :is(
+  .ytp-ce-element,
+  .ytp-ce-covering-overlay
+) {
+  display: none !important;
+}
+
+html[data-mytube~="mixes"] :is(
+  ytd-radio-renderer,
+  ytd-compact-radio-renderer,
+  ytm-radio-renderer,
+  ytm-compact-radio-renderer
+) {
+  display: none !important;
+}
+
+html[data-mytube~="mixes"] :is(
+  :is(ytd-rich-item-renderer, ytd-video-renderer, ytd-grid-video-renderer, ytd-compact-video-renderer, yt-lockup-view-model, ytm-rich-item-renderer, ytm-video-with-context-renderer, ytm-compact-video-renderer, ytm-video-card-renderer, ytd-playlist-renderer):has(a[href*="&list=RD"], a[href*="?list=RD"])
+) {
+  display: none !important;
+}
+
+html[data-mytube~="info"][data-mytube-route="watch"] :is(
+  ytd-watch-metadata,
+  ytd-video-primary-info-renderer,
+  ytd-video-secondary-info-renderer,
+  ytm-slim-video-metadata-section-renderer,
+  ytm-slim-video-action-bar-renderer,
+  ytm-video-description-header-renderer
+) {
+  display: none !important;
+}
+
+html[data-mytube~="merch"] :is(
+  ytd-merch-shelf-renderer,
+  ytm-merch-shelf-renderer,
+  ytd-ticket-shelf-renderer,
+  ytm-ticket-shelf-renderer,
+  ytd-offer-module-renderer,
+  ytm-offer-module-renderer,
+  ytd-product-list-renderer,
+  ytm-product-list-renderer,
+  ytd-shopping-carousel-module-renderer,
+  ytm-shopping-carousel-module-renderer
+) {
+  display: none !important;
+}
+
+html[data-mytube~="ads"] :is(
+  ytd-ad-slot-renderer,
+  ytm-ad-slot-renderer,
+  ytd-display-ad-renderer,
+  ytm-display-ad-renderer,
+  ytd-promoted-sparkles-web-renderer,
+  ytm-promoted-sparkles-web-renderer,
+  ytd-in-feed-ad-layout-renderer,
+  ytm-promoted-video-renderer,
+  ytd-action-companion-ad-renderer,
+  ytd-companion-slot-renderer,
+  #masthead-ad,
+  #player-ads,
+  .ytp-ad-overlay-container
+) {
+  display: none !important;
+}
+
+html[data-mytube~="ads"] :is(
+  :is(ytd-rich-item-renderer, ytm-rich-item-renderer):has(ytd-ad-slot-renderer, ytm-ad-slot-renderer, ytd-display-ad-renderer, ytm-display-ad-renderer, ytd-promoted-sparkles-web-renderer, ytm-promoted-sparkles-web-renderer, ytd-in-feed-ad-layout-renderer, ytm-promoted-video-renderer)
+) {
+  display: none !important;
+}

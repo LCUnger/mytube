@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MyTube settings</title>
+  <link rel="stylesheet" href="settings.css">
+  <script defer src="settings.js"></script>
+  <script defer src="panel.js"></script>
+</head>
+<body>
+  <header><img src="icons/48.png" width="44" height="44" alt=""><h1>MyTube</h1></header>
+  <p role="status" id="status"></p>
+  <main>
+    <fieldset disabled><legend>Feed and navigation</legend>
+      <label>Hide Shorts<input type="checkbox" name="shorts" role="switch"></label>
+      <label>Hide community posts and polls<input type="checkbox" name="community" role="switch"></label>
+      <label>Hide Home feed<input type="checkbox" name="home" role="switch"></label>
+      <label>Hide Mixes<input type="checkbox" name="mixes" role="switch"></label>
+      <label>Hide Explore and Trending<input type="checkbox" name="explore" role="switch"></label>
+      <label>Hide More from YouTube<input type="checkbox" name="more" role="switch"></label>
+    </fieldset>
+    <fieldset disabled><legend>Playback</legend>
+      <label>Block YouTube ads<input type="checkbox" name="ads" role="switch"></label>
+      <label>Stop after each video<input type="checkbox" name="autoplay" role="switch"></label>
+      <label>Hide annotations<input type="checkbox" name="annotations" role="switch"></label>
+      <label>Hide end-screen recommendations<input type="checkbox" name="endFeed" role="switch"></label>
+      <label>Hide creator end-screen cards<input type="checkbox" name="endCards" role="switch"></label>
+    </fieldset>
+    <fieldset disabled><legend>Watch page</legend>
+      <label>Hide comments<input type="checkbox" name="comments" role="switch"></label>
+      <label>Hide video sidebar<input type="checkbox" name="sidebar" role="switch"></label>
+      <label>Hide video information<input type="checkbox" name="info" role="switch"></label>
+      <label>Hide merch, tickets and offers<input type="checkbox" name="merch" role="switch"></label>
+    </fieldset>
+  </main>
+</body>
+</html>
