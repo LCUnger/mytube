@@ -55,7 +55,9 @@ Python 3.9+ builds the ZIP without installing any packages. From the project roo
 python3 scripts/package.py
 ```
 
-The release is written to `dist/mytube-1.0.1.zip`. To run the local checks with Node.js 22+ and Python in a virtual environment:
+The release ZIP is written to `dist/` with the version from the manifest in its filename. A browser-generated `.crx` is a signed package for local installation. Keep its `.pem` signing key private and reuse that key to update the same sideloaded extension. Git ignores both files.
+
+To run the local checks with Node.js 22+ and Python in a virtual environment:
 
 ```sh
 node --test tests/*.test.cjs

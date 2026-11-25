@@ -1,4 +1,7 @@
 dist/
+*.crx
+*.pem
+**/_metadata/
 node_modules/
 __pycache__/
 .agents/
