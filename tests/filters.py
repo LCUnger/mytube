@@ -41,6 +41,24 @@ class Filters(unittest.TestCase):
                 tree.html["data-mytube"] = ""
                 self.assertFalse(any(tree.select(selector) for selector in SELECTORS))
 
+    def test_desktop_shorts_navigation(self):
+        markup = """
+          <ytd-guide-entry-renderer id="expanded"><a title="Shorts"></a></ytd-guide-entry-renderer>
+          <ytd-mini-guide-entry-renderer id="mini" aria-label="Shorts"></ytd-mini-guide-entry-renderer>
+          <ytd-guide-entry-renderer id="absolute"><a href="https://www.youtube.com/shorts/abc"></a></ytd-guide-entry-renderer>
+          <yt-tab-shape id="channel" tab-title="Shorts"></yt-tab-shape>
+          <yt-tab-shape id="localized"><a href="/@creator/shorts"></a></yt-tab-shape>
+          <ytd-guide-entry-renderer id="subscriptions"><a title="Subscriptions"></a></ytd-guide-entry-renderer>
+          <yt-tab-shape id="videos" tab-title="Videos"></yt-tab-shape>
+          <a id="shared" href="/shorts/abc">Shared video</a>
+        """
+        tree = BeautifulSoup('<html data-mytube="shorts">' + markup + '</html>', "html.parser")
+        def hidden_ids():
+            return {node.get("id") for selector in SELECTORS for node in tree.select(selector)}
+        self.assertEqual(hidden_ids(), {"expanded", "mini", "absolute", "channel", "localized"})
+        tree.html["data-mytube"] = ""
+        self.assertEqual(hidden_ids(), set())
+
     def test_home_is_route_specific(self):
         tree = BeautifulSoup('<html data-mytube="home" data-mytube-route="other"><ytm-browse>'
                              '<ytm-rich-grid-renderer></ytm-rich-grid-renderer></ytm-browse></html>', "html.parser")

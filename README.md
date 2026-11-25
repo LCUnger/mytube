@@ -55,7 +55,7 @@ Python 3.9+ builds the ZIP without installing any packages. From the project roo
 python3 scripts/package.py
 ```
 
-The release is written to `dist/mytube-1.0.0.zip`. To run the local checks with Node.js 22+ and Python in a virtual environment:
+The release is written to `dist/mytube-1.0.1.zip`. To run the local checks with Node.js 22+ and Python in a virtual environment:
 
 ```sh
 node --test tests/*.test.cjs

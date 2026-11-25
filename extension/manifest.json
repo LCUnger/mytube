@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "MyTube — YouTube focus controls",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Filter Shorts, community posts and ads, stop autoplay, and choose which parts of YouTube you see.",
   "permissions": ["storage", "declarativeNetRequest"],
   "icons": {"16":"icons/16.png","32":"icons/32.png","48":"icons/48.png","128":"icons/128.png"},
